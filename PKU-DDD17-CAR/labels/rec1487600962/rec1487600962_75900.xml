@@ -1,0 +1,26 @@
+<annotation>
+	<folder>APS</folder>
+	<filename>75900.png</filename>
+	<path>/home/ljn/DDD17_dataset/run3/rec1487600962/APS/75900.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>346</width>
+		<height>260</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>192</xmin>
+			<ymin>159</ymin>
+			<xmax>207</xmax>
+			<ymax>171</ymax>
+		</bndbox>
+	</object>
+</annotation>

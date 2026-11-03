@@ -1,0 +1,26 @@
+<annotation>
+	<folder>spike_frame</folder>
+	<filename>56100.jpg</filename>
+	<path>/home/ljn/DDD17_dataset/run3/rec1487609463/spike_frame/56100.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>346</width>
+		<height>260</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>10</xmin>
+			<ymin>145</ymin>
+			<xmax>98</xmax>
+			<ymax>194</ymax>
+		</bndbox>
+	</object>
+</annotation>

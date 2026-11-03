@@ -1,0 +1,26 @@
+<annotation>
+	<folder>APS</folder>
+	<filename>38600.jpg</filename>
+	<path>/home/ljn/DDD17_dataset/run3/rec1487609463/APS/38600.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>346</width>
+		<height>260</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>216</xmin>
+			<ymin>159</ymin>
+			<xmax>242</xmax>
+			<ymax>179</ymax>
+		</bndbox>
+	</object>
+</annotation>

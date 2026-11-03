@@ -1,0 +1,58 @@
+
+public class HdfsClient {
+
+    public static void main(String[] args) throws Exception {
+      
+        Configuration conf = new Configuration();
+        URI uri = new URI("hdfs://192.168.206.159:9000"); 
+        String user = "inspur1"; 
+
+        FileSystem fs = FileSystem.get(uri, conf, user);
+        System.out.println("连接成功: " + fs);
+
+        
+        // 创建目录
+        Path dir = new Path("/user/inspur1/demo");
+        if (!fs.exists(dir)) {
+            fs.mkdirs(dir);
+            System.out.println("创建目录成功: " + dir);
+        }
+
+        // 上传文件
+        Path localFile = new Path("C:/data/test.txt"); 
+        Path hdfsFile = new Path(dir, "test.txt");
+        fs.copyFromLocalFile(localFile, hdfsFile);
+        System.out.println("上传成功: " + hdfsFile);
+
+        // 查看目录下的文件列表
+        System.out.println("\n当前目录文件:");
+        FileStatus[] list = fs.listStatus(dir);
+        for (FileStatus f : list) {
+            System.out.println("- " + f.getPath() + " (大小:" + f.getLen() + "B)");
+        }
+
+        // 下载文件到本地
+        Path localDownloadPath = new Path("C:/data/downloaded_test.txt");
+        fs.copyToLocalFile(hdfsFile, localDownloadPath);
+        System.out.println("下载完成: " + localDownloadPath);
+
+        // 读取文件内容
+        System.out.println("\n读取 HDFS 文件内容:");
+        try (InputStream in = fs.open(hdfsFile)) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = in.read(buffer)) > 0) {
+                System.out.write(buffer, 0, bytesRead);
+            }
+        }
+        System.out.println();
+
+        // 删除文件
+        boolean deleted = fs.delete(hdfsFile, false);
+        System.out.println("删除文件: " + (deleted ? "成功" : "失败"));
+
+        // 关闭连接
+        fs.close();
+        System.out.println("已关闭连接。");
+    }
+}
